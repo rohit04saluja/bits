@@ -45,7 +45,6 @@ else :
 try:
     while True :
         in_str = raw_input("")[2:]
-        print len(in_str)
         if (len(in_str)*4 < sum(pttrn)) :
             print "The input number is smaller than the expected"
             continue

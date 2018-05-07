@@ -17,18 +17,48 @@ def show_help () :
     print "\nExample:"
     print "bits 1 6 9 4"
     print "0x47298"
-    print ""
-    print "Decimal"
-    print "Binary"
-    print "Hex"
-    print "\nEnter again to exit"
+    print "Decimal 0     35       297    8"
+    print "Binary  0 100011 100101001 1000"
+    print "Hex     0     23       129    8"
 
 pttrn = list()
 
+def display (b, d, h) :
+    dout = "Decimal "
+    bout = "Binary  "
+    hout = "Hex     "
+    for i in range(0, len(pttrn)) :
+        dout += str(d[i]).rjust(pttrn[i]) + " "
+        bout += str(b[i]).rjust(pttrn[i]) + " "
+        hout += str(h[i]).rjust(pttrn[i]) + " "
+    print dout
+    print bout
+    print hout
+
 if len(sys.argv) > 2:
     for i in range (1, len(sys.argv)) :
-        pttrn.append(sys.argv[i])
+        pttrn.append(int(sys.argv[i]))
 else :
     show_help()
     sys.exit(0);
 
+try:
+    while True :
+        in_str = raw_input("")[2:]
+        print len(in_str)
+        if (len(in_str)*4 < sum(pttrn)) :
+            print "The input number is smaller than the expected"
+            continue
+        in_str = bin(int(in_str, 16))[2:].zfill(len(in_str)*4)
+        binary = list()
+        decimal = list()
+        hexa = list()
+        ref = 0
+        for p in pttrn :
+            binary.append(in_str[ref:ref+p])
+            decimal.append(int(in_str[ref:ref+p], 2))
+            hexa.append(hex(int(in_str[ref:ref+p], 2))[2:])
+            ref += p
+        display(binary, decimal, hexa)
+except:
+    sys.exit(0)

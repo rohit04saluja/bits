@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sys
+
+__author__ = "Rohit Saluja"
+__copyright__ = "Copyright © 2018"
+__license__ = "MIT"
+__version__ = "1.0.0"
+__maintainer__ = "ROhit Saluja"
+__email__ = "rohit04saluja@protonmail.com"
+__status__ = "Development"
+
+def show_help () :
+    print "Usage:"
+    print "bits <field-width> [<field-width> ...]"
+    print "\nExample:"
+    print "bits 1 6 9 4"
+    print "0x47298"
+    print ""
+    print "Decimal"
+    print "Binary"
+    print "Hex"
+    print "\nEnter again to exit"
+
+pttrn = list()
+
+if len(sys.argv) > 2:
+    for i in range (1, len(sys.argv)) :
+        pttrn.append(sys.argv[i])
+else :
+    show_help()
+    sys.exit(0);
+

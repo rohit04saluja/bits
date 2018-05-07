@@ -9,7 +9,7 @@ __license__ = "MIT"
 __version__ = "1.0.0"
 __maintainer__ = "ROhit Saluja"
 __email__ = "rohit04saluja@protonmail.com"
-__status__ = "Development"
+__status__ = "Production"
 
 def show_help () :
     print "Usage:"

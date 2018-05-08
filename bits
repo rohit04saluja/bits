@@ -12,21 +12,21 @@ __email__ = "rohit04saluja@protonmail.com"
 __status__ = "Production"
 
 def show_help () :
-    print "Usage:"
+    print "\x1b[0;30;47mUsage:\x1b[0m"
     print "bits <field-width> [<field-width> ...]"
-    print "\nExample:"
+    print "\n\x1b[0;30;47mExample:\x1b[0m"
     print "bits 1 6 9 4"
     print "0x47298"
-    print "Decimal 0     35       297    8"
-    print "Binary  0 100011 100101001 1000"
-    print "Hex     0     23       129    8"
+    print "\x1b[0;36;40mDecimal\x1b[0m | 0     35       297    8"
+    print "\x1b[0;36;40mBinary \x1b[0m | 0 100011 100101001 1000"
+    print "\x1b[0;36;40mHex    \x1b[0m | 0     23       129    8"
 
 pttrn = list()
 
 def display (b, d, h) :
-    dout = "Decimal "
-    bout = "Binary  "
-    hout = "Hex     "
+    dout = "\x1b[0;36;40mDecimal\x1b[0m | "
+    bout = "\x1b[0;36;40mBinary \x1b[0m | "
+    hout = "\x1b[0;36;40mHex    \x1b[0m | "
     for i in range(0, len(pttrn)) :
         dout += str(d[i]).rjust(pttrn[i]) + " "
         bout += str(b[i]).rjust(pttrn[i]) + " "
